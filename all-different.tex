@@ -14,6 +14,7 @@
 \usepackage[vlined]{algorithm2e} % algorithms
 \usepackage{centernot}
 \usepackage{mathtools}
+\usepackage{listings}
 
 \usetikzlibrary{shapes, arrows, shadows, calc, positioning, fit}
 \usetikzlibrary{decorations.pathreplacing, decorations.pathmorphing, shapes.misc}
@@ -301,10 +302,11 @@
         \node <4->  [anchor=center] at (1.5, 1.5)  { 1 };
 
         \node <1-4> [anchor=center] at (4.5, 1.5)  { 23 };
-        \node <1-4> [anchor=center] at (7.5, 1.5)  { 23 };
         \node <5-6> [anchor=center] at (4.5, 1.5)  { \textcolor{uofgcobalt}{23} };
-        \node <5-6> [anchor=center] at (7.5, 1.5)  { \textcolor{uofgcobalt}{23} };
         \node <7->  [anchor=center] at (4.5, 1.5)  { 23 };
+
+        \node <1-4> [anchor=center] at (7.5, 1.5)  { 23 };
+        \node <5-6> [anchor=center] at (7.5, 1.5)  { \textcolor{uofgcobalt}{23} };
         \node <7->  [anchor=center] at (7.5, 1.5)  { 23 };
 
         \node <1-5> [anchor=center] at (10.5, 1.5) { 245 };
@@ -333,7 +335,37 @@
     \end{tikzpicture}\end{center}
 \end{frame}
 
-\begin{frame}{What Does Choco Do?}
+\begin{frame}[fragile]{What Does Choco Do?}
+    \only<1> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{OneRowSudoku-snippet.java}
+    }
+
+    \only<2> {
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{OneRowSudoku-output.txt}
+
+        \begin{center}\begin{tikzpicture}[scale=0.4]
+            \draw[thick, scale=3, color=uofgslate] (0, 0) grid (9, 1);
+
+            \node [anchor=center] at (1.5, 1.5)  { 1 };
+            \node [anchor=center] at (4.5, 1.5)  { 23 };
+            \node [anchor=center] at (7.5, 1.5)  { 23 };
+            \node [anchor=center] at (10.5, 1.5) { 45 };
+            \node [anchor=center] at (13.5, 1.5) { 456 };
+            \node [anchor=center] at (16.5, 1.5) { 456 };
+            \node [anchor=center] at (19.5, 1.5) { 79 };
+            \node [anchor=center] at (22.5, 1.5) { 78 };
+            \node [anchor=center] at (25.5, 1.5) { 89 };
+
+        \end{tikzpicture}\end{center}
+    }
+
+    \only<3> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{OneRowSudoku-neq-snippet.java}
+    }
+
+    \only<4> {
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{OneRowSudoku-neq-output.txt}
+    }
 \end{frame}
 
 \begin{frame}{Hall Sets}
@@ -379,11 +411,11 @@
             \item Remember: propagation only considers \emph{one constraint at a time}, and the only
                 communication between constraints is by deleting values.
 
-            \item This is one reason to prefer global constraints over decompositions: we saw that
-                if we only considered $\ne$ constraints individually, we couldn't tell that a
-                triangle wasn't 2-colourable.
-
             \item Automatically combining certain constraints is an active research topic.
+                \begin{itemize}
+                    \item But getting ``the best possible'' filtering from two ``all different''
+                        constraints simultaneously is \NP-hard\ldots
+                \end{itemize}
         \end{itemize}
     }
 \end{frame}

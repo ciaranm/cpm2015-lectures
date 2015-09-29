@@ -7,9 +7,10 @@
 *.pdf
 *.snm
 *.toc
+*.class
+choco-solver-3.3.1-with-dependencies.jar
 texput.fls
 texput.log
 gen-*.*
 gnuplot-lua-*
 !UoG_keyline.pdf
-
