@@ -135,7 +135,7 @@
 {
     \usebackgroundtemplate{
         \tikz[overlay, remember picture]
-        \node[at=(current page.south), anchor=south, inner sep=0pt]{\includegraphics*[keepaspectratio=true, width=\paperwidth]{background.jpg}};
+        \node[at=(current page.south), anchor=south, inner sep=0pt]{\includegraphics*[keepaspectratio=true, width=\paperwidth]{background1.jpg}};
     }
     \begin{frame}[plain,noframenumbering]
         \titlepage
@@ -351,11 +351,11 @@
 
 \begin{frame}[fragile]{What Does Choco Do?}
     \only<1> {
-        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{OneRowSudoku-snippet.java}
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/OneRowSudoku-snippet.java}
     }
 
     \only<2> {
-        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{OneRowSudoku-output.txt}
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/OneRowSudoku-output.txt}
 
         \begin{center}\begin{tikzpicture}[scale=0.4]
             \draw[thick, scale=3, color=uofgslate] (0, 0) grid (9, 1);
@@ -374,11 +374,11 @@
     }
 
     \only<3> {
-        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{OneRowSudoku-neq-snippet.java}
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/OneRowSudoku-neq-snippet.java}
     }
 
     \only<4> {
-        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{OneRowSudoku-neq-output.txt}
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/OneRowSudoku-neq-output.txt}
     }
 \end{frame}
 
@@ -571,71 +571,71 @@
 \end{frame}
 
 \begin{frame}[fragile]{A Sudoku Solver in Choco}
-    \only<1>{\lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222E.txt}}
-    \only<2>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-1-snippet.java}}
-    \only<3>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-2-snippet.java}}
-    \only<4>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-3-snippet.java}}
-    \only<5>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-4-snippet.java}}
+    \only<1>{\lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222E.txt}}
+    \only<2>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-1-snippet.java}}
+    \only<3>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-2-snippet.java}}
+    \only<4>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-3-snippet.java}}
+    \only<5>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-4-snippet.java}}
     \only<6-7>{
-        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-5-snippet.java}
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-5-snippet.java}
         \begin{tikzpicture}[remember picture, overlay]
             \node [anchor=north east, xshift=-0.5cm, yshift=-1cm] at (current page.north east) {
                 \only<7>{\includegraphics*[keepaspectratio=true,scale=0.45]{eww.jpg}}
             };
         \end{tikzpicture}
     }
-    \only<8>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-6-snippet.java}}
-    \only<9>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-7-snippet.java}}
+    \only<8>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-6-snippet.java}}
+    \only<9>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/Sudoku-7-snippet.java}}
 \end{frame}
 
 \begin{frame}[fragile]{Incidentally, 2D arrays in Gecode are Much Nicer}
-    \lstinputlisting[language=C++, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{GecodeSudoku-snippet.cc}
+    \lstinputlisting[language=C++, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/GecodeSudoku-snippet.cc}
 \end{frame}
 
 \begin{frame}{Some Experiments}
     \only<1> {
-        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222E.txt}
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222E.txt}
     }
     \only<2-3> {
         \begin{columns}
             \begin{column}{0.45\textwidth}
-                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222E-neq.txt}
+                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222E-neq.txt}
             \end{column}
             \begin{column}{0.45\textwidth}
                 \only<3>{
-                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222E-alldiff.txt}
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222E-alldiff.txt}
                 }
             \end{column}
         \end{columns}
     }
 
     \only<4> {
-        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222H.txt}
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222H.txt}
     }
     \only<5-6> {
         \begin{columns}
             \begin{column}{0.45\textwidth}
-                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222H-neq.txt}
+                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222H-neq.txt}
             \end{column}
             \begin{column}{0.45\textwidth}
                 \only<6>{
-                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222H-alldiff.txt}
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/herald20061222H-alldiff.txt}
                 }
             \end{column}
         \end{columns}
     }
 
     \only<7> {
-        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{times20070107.txt}
+        \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/times20070107.txt}
     }
     \only<8-9> {
         \begin{columns}
             \begin{column}{0.45\textwidth}
-                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{times20070107-neq.txt}
+                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/times20070107-neq.txt}
             \end{column}
             \begin{column}{0.45\textwidth}
                 \only<9>{
-                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{times20070107-alldiff.txt}
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/times20070107-alldiff.txt}
                 }
             \end{column}
         \end{columns}
@@ -648,11 +648,11 @@
     \only<11-12> {
         \begin{columns}
             \begin{column}{0.45\textwidth}
-                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{hardest-neq.txt}
+                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/hardest-neq.txt}
             \end{column}
             \begin{column}{0.45\textwidth}
                 \only<12>{
-                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{hardest-alldiff.txt}
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/hardest-alldiff.txt}
                 }
             \end{column}
         \end{columns}
