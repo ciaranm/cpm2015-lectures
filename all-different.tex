@@ -301,7 +301,7 @@
 
 \end{frame}
 
-\begin{frame}{What Would a Human Do?}
+\begin{frame}{How do Humans Solve Sudoku?}
     \begin{center}\begin{tikzpicture}[scale=0.4]
         \draw[thick, scale=3, color=uofgslate] (0, 0) grid (9, 1);
 
@@ -382,87 +382,6 @@
     }
 \end{frame}
 
-\begin{frame}{Matchings, Again}
-    \centering
-    \begin{tikzpicture}[scale=0.75]
-        \node <2-> (X1) at (0, 8) { $\mathit{row}[0]$ };
-        \node <2-> (X2) at (0, 7) { $\mathit{row}[1]$ };
-        \node <2-> (X3) at (0, 6) { $\mathit{row}[2]$ };
-        \node <2-> (X4) at (0, 5) { $\mathit{row}[3]$ };
-        \node <2-> (X5) at (0, 4) { $\mathit{row}[4]$ };
-        \node <2-> (X6) at (0, 3) { $\mathit{row}[5]$ };
-        \node <2-> (X7) at (0, 2) { $\mathit{row}[6]$ };
-        \node <2-> (X8) at (0, 1) { $\mathit{row}[7]$ };
-        \node <2-> (X9) at (0, 0) { $\mathit{row}[8]$ };
-
-        \node <1-2> (V1) at (6, 8) { $\phantom{1}$ };
-        \node <3-> (V1) at (6, 8) { $1$ };
-        \node <3-> (V2) at (6, 7) { $2$ };
-        \node <3-> (V3) at (6, 6) { $3$ };
-        \node <3-> (V4) at (6, 5) { $4$ };
-        \node <3-> (V5) at (6, 4) { $5$ };
-        \node <3-> (V6) at (6, 3) { $6$ };
-        \node <3-> (V7) at (6, 2) { $7$ };
-        \node <3-> (V8) at (6, 1) { $8$ };
-        \node <3-> (V9) at (6, 0) { $9$ };
-
-        \draw <4> [color=uofgsandstone!50] (X1.east) -- (V1.west);
-        \draw <4> [color=uofgsandstone!50] (X1.east) -- (V8.west);
-        \draw <4> [color=uofgsandstone!50] (X2.east) -- (V2.west);
-        \draw <4> [color=uofgsandstone!50] (X2.east) -- (V3.west);
-        \draw <4> [color=uofgsandstone!50] (X3.east) -- (V2.west);
-        \draw <4> [color=uofgsandstone!50] (X3.east) -- (V3.west);
-        \draw <4> [color=uofgsandstone!50] (X4.east) -- (V2.west);
-        \draw <4> [color=uofgsandstone!50] (X4.east) -- (V4.west);
-        \draw <4> [color=uofgsandstone!50] (X4.east) -- (V5.west);
-        \draw <4> [color=uofgsandstone!50] (X5.east) -- (V4.west);
-        \draw <4> [color=uofgsandstone!50] (X5.east) -- (V5.west);
-        \draw <4> [color=uofgsandstone!50] (X5.east) -- (V6.west);
-        \draw <4> [color=uofgsandstone!50] (X6.east) -- (V4.west);
-        \draw <4> [color=uofgsandstone!50] (X6.east) -- (V5.west);
-        \draw <4> [color=uofgsandstone!50] (X6.east) -- (V6.west);
-        \draw <4> [color=uofgsandstone!50] (X7.east) -- (V2.west);
-        \draw <4> [color=uofgsandstone!50] (X7.east) -- (V7.west);
-        \draw <4> [color=uofgsandstone!50] (X7.east) -- (V9.west);
-        \draw <4> [color=uofgsandstone!50] (X8.east) -- (V3.west);
-        \draw <4> [color=uofgsandstone!50] (X8.east) -- (V7.west);
-        \draw <4> [color=uofgsandstone!50] (X8.east) -- (V8.west);
-        \draw <4> [color=uofgsandstone!50] (X9.east) -- (V2.west);
-        \draw <4> [color=uofgsandstone!50] (X9.east) -- (V3.west);
-        \draw <4> [color=uofgsandstone!50] (X9.east) -- (V5.west);
-        \draw <4> [color=uofgsandstone!50] (X9.east) -- (V8.west);
-        \draw <4> [color=uofgsandstone!50] (X9.east) -- (V9.west);
-
-        \draw <5> [color=uofgsandstone!50] (X1.east) -- (V8.west);
-        \draw <5> [color=uofgsandstone!50] (X2.east) -- (V2.west);
-        \draw <5> [color=uofgsandstone!50] (X3.east) -- (V3.west);
-        \draw <5> [color=uofgsandstone!50] (X4.east) -- (V2.west);
-        \draw <5> [color=uofgsandstone!50] (X4.east) -- (V5.west);
-        \draw <5> [color=uofgsandstone!50] (X5.east) -- (V4.west);
-        \draw <5> [color=uofgsandstone!50] (X5.east) -- (V5.west);
-        \draw <5> [color=uofgsandstone!50] (X6.east) -- (V4.west);
-        \draw <5> [color=uofgsandstone!50] (X6.east) -- (V6.west);
-        \draw <5> [color=uofgsandstone!50] (X7.east) -- (V2.west);
-        \draw <5> [color=uofgsandstone!50] (X7.east) -- (V9.west);
-        \draw <5> [color=uofgsandstone!50] (X8.east) -- (V3.west);
-        \draw <5> [color=uofgsandstone!50] (X8.east) -- (V7.west);
-        \draw <5> [color=uofgsandstone!50] (X9.east) -- (V2.west);
-        \draw <5> [color=uofgsandstone!50] (X9.east) -- (V3.west);
-        \draw <5> [color=uofgsandstone!50] (X9.east) -- (V5.west);
-        \draw <5> [color=uofgsandstone!50] (X9.east) -- (V8.west);
-        \draw <5> [ultra thick] (X9.east) -- (V9.west);
-        \draw <5> [ultra thick] (X1.east) -- (V1.west);
-        \draw <5> [ultra thick] (X2.east) -- (V3.west);
-        \draw <5> [ultra thick] (X3.east) -- (V2.west);
-        \draw <5> [ultra thick] (X4.east) -- (V4.west);
-        \draw <5> [ultra thick] (X5.east) -- (V6.west);
-        \draw <5> [ultra thick] (X6.east) -- (V5.west);
-        \draw <5> [ultra thick] (X7.east) -- (V7.west);
-        \draw <5> [ultra thick] (X8.east) -- (V8.west);
-    \end{tikzpicture}
-
-\end{frame}
-
 \begin{frame}{Hall Sets}
     \begin{itemize}
         \item A \emph{Hall set} of size $n$ is a set of $n$ variables from an ``all different''
@@ -474,147 +393,6 @@
         \item If we do this for every Hall set, we delete every value that cannot appear in at least
             one way of satisfying the constraint.
     \end{itemize}
-\end{frame}
-
-\begin{frame}{A Magic Trick}
-
-    \only<1> {
-        \begin{itemize}
-            \item Even though there are $2^n$ potential Hall sets, we can do this in polynomial time using matching
-                algorithms.
-
-            \item This algorithm isn't examinable, but here's an animation of roughly how it works, so you don't have to
-                believe it's magic any more.
-        \end{itemize}
-    }
-
-    \only <2-> {
-        \centering
-        \begin{tikzpicture}[scale=0.75]
-            \node [inner sep=1pt] (X1) at (0, 8) { $\mathit{row}[0]$ };
-            \node [inner sep=1pt] (X2) at (0, 7) { $\mathit{row}[1]$ };
-            \node [inner sep=1pt] (X3) at (0, 6) { $\mathit{row}[2]$ };
-            \node [inner sep=1pt] (X4) at (0, 5) { $\mathit{row}[3]$ };
-            \node [inner sep=1pt] (X5) at (0, 4) { $\mathit{row}[4]$ };
-            \node [inner sep=1pt] (X6) at (0, 3) { $\mathit{row}[5]$ };
-            \node [inner sep=1pt] (X7) at (0, 2) { $\mathit{row}[6]$ };
-            \node [inner sep=1pt] (X8) at (0, 1) { $\mathit{row}[7]$ };
-            \node [inner sep=1pt] (X9) at (0, 0) { $\mathit{row}[8]$ };
-
-            \node [inner sep=1pt] (V1) at (6, 8) { $1$ };
-            \node [inner sep=1pt] (V2) at (6, 7) { $2$ };
-            \node [inner sep=1pt] (V3) at (6, 6) { $3$ };
-            \node [inner sep=1pt] (V4) at (6, 5) { $4$ };
-            \node [inner sep=1pt] (V5) at (6, 4) { $5$ };
-            \node [inner sep=1pt] (V6) at (6, 3) { $6$ };
-            \node [inner sep=1pt] (V7) at (6, 2) { $7$ };
-            \node [inner sep=1pt] (V8) at (6, 1) { $8$ };
-            \node [inner sep=1pt] (V9) at (6, 0) { $9$ };
-
-            \draw <2> [color=uofgsandstone!50] (X1.east) -- (V8.west);
-            \draw <2> [color=uofgsandstone!50] (X2.east) -- (V2.west);
-            \draw <2> [color=uofgsandstone!50] (X3.east) -- (V3.west);
-            \draw <2> [color=uofgsandstone!50] (X4.east) -- (V2.west);
-            \draw <2> [color=uofgsandstone!50] (X4.east) -- (V5.west);
-            \draw <2> [color=uofgsandstone!50] (X5.east) -- (V4.west);
-            \draw <2> [color=uofgsandstone!50] (X5.east) -- (V5.west);
-            \draw <2> [color=uofgsandstone!50] (X6.east) -- (V4.west);
-            \draw <2> [color=uofgsandstone!50] (X6.east) -- (V6.west);
-            \draw <2> [color=uofgsandstone!50] (X7.east) -- (V2.west);
-            \draw <2> [color=uofgsandstone!50] (X7.east) -- (V9.west);
-            \draw <2> [color=uofgsandstone!50] (X8.east) -- (V3.west);
-            \draw <2> [color=uofgsandstone!50] (X8.east) -- (V7.west);
-            \draw <2> [color=uofgsandstone!50] (X9.east) -- (V2.west);
-            \draw <2> [color=uofgsandstone!50] (X9.east) -- (V3.west);
-            \draw <2> [color=uofgsandstone!50] (X9.east) -- (V5.west);
-            \draw <2> [color=uofgsandstone!50] (X9.east) -- (V8.west);
-            \draw <2> [color=uofgsandstone!50] (X9.east) -- (V9.west);
-            \draw <2> [ultra thick] (X1.east) -- (V1.west);
-            \draw <2> [ultra thick] (X2.east) -- (V3.west);
-            \draw <2> [ultra thick] (X3.east) -- (V2.west);
-            \draw <2> [ultra thick] (X4.east) -- (V4.west);
-            \draw <2> [ultra thick] (X5.east) -- (V6.west);
-            \draw <2> [ultra thick] (X6.east) -- (V5.west);
-            \draw <2> [ultra thick] (X7.east) -- (V7.west);
-            \draw <2> [ultra thick] (X8.east) -- (V8.west);
-            \draw <2> [ultra thick] (X9.east) -- (V9.west);
-
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X1.east) -- (V8.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X2.east) -- (V2.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X3.east) -- (V3.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X4.east) -- (V2.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X4.east) -- (V5.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X5.east) -- (V4.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X5.east) -- (V5.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X6.east) -- (V4.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X6.east) -- (V6.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X7.east) -- (V2.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X7.east) -- (V9.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X8.east) -- (V3.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X8.east) -- (V7.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X9.east) -- (V2.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X9.east) -- (V3.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X9.east) -- (V5.west);
-            \draw <3-4> [thick, ->, shorten <=0.1cm] (X9.east) -- (V8.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X9.east) -- (V9.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X1.east) -- (V1.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X2.east) -- (V3.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X3.east) -- (V2.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X4.east) -- (V4.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X5.east) -- (V6.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X6.east) -- (V5.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X7.east) -- (V7.west);
-            \draw <3-4> [thick, <-, shorten >=0.1cm] (X8.east) -- (V8.west);
-
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofglawn!80!black] (X2.east) -- (V2.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofglawn!80!black] (X3.east) -- (V3.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofglawn!80!black] (X2.east) -- (V3.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofglawn!80!black] (X3.east) -- (V2.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgturquoise!80!black] (X4.east) -- (V5.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgturquoise!80!black] (X5.east) -- (V4.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgturquoise!80!black] (X5.east) -- (V5.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgturquoise!80!black] (X6.east) -- (V4.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgturquoise!80!black] (X6.east) -- (V6.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgturquoise!80!black] (X4.east) -- (V4.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgturquoise!80!black] (X5.east) -- (V6.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgturquoise!80!black] (X6.east) -- (V5.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgsunshine!80!black] (X7.east) -- (V9.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgsunshine!80!black] (X8.east) -- (V7.west);
-            \draw <5> [thick, ->, shorten <=0.1cm, color=uofgsunshine!80!black] (X9.east) -- (V8.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgsunshine!80!black] (X9.east) -- (V9.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgsunshine!80!black] (X7.east) -- (V7.west);
-            \draw <5> [thick, <-, shorten >=0.1cm, color=uofgsunshine!80!black] (X8.east) -- (V8.west);
-            \draw <7-> [thick, <-, shorten >=0.1cm, color=uofglawn] (X1.east) -- (V1.west);
-            \draw <5-6>  [thick, <-, shorten >=0.1cm] (X1.east) -- (V1.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X4.east) -- (V2.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X7.east) -- (V2.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X8.east) -- (V3.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X9.east) -- (V2.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X9.east) -- (V3.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X9.east) -- (V5.west);
-            \draw <5-6>  [thick, ->, shorten <=0.1cm] (X1.east) -- (V8.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X4.east) -- (V2.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X7.east) -- (V2.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X8.east) -- (V3.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X9.east) -- (V2.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X9.east) -- (V3.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X9.east) -- (V5.west);
-            \draw <7->  [thick, ->, shorten <=0.1cm, color=uofgpillarbox] (X1.east) -- (V8.west);
-
-            \begin{pgfonlayer}{background}
-                \node [rounded corners, fit = (X1)] {};
-                \node [rounded corners, fit = (V1)] {};
-                \node [rounded corners, fit = (X2) (X3) (V2) (V3)] {};
-                \node [rounded corners, fit = (X4) (X5) (X6) (V4) (V5) (V6)] {};
-                \node [rounded corners, fit = (X7) (X8) (X9) (V7) (V8) (V9)] {};
-                \node <4-5> [rounded corners, fit = (X1), fill=uofgcobalt] {};
-                \node <4-5> [rounded corners, fit = (V1), fill=uofgpumpkin] {};
-                \node <4-5> [rounded corners, fit = (X2) (X3) (V2) (V3), fill=uofglawn] {};
-                \node <4-5> [rounded corners, fit = (X4) (X5) (X6) (V4) (V5) (V6), fill=uofgturquoise] {};
-                \node <4-5> [rounded corners, fit = (X7) (X8) (X9) (V7) (V8) (V9), fill=uofgsunshine] {};
-            \end{pgfonlayer}
-        \end{tikzpicture}
-    }
 \end{frame}
 
 \begin{frame}{Only Occurs in One Place?}
@@ -629,14 +407,185 @@
     \end{itemize}
 \end{frame}
 
+\begin{frame}{Is Choco Magic?}
+
+    \only<1> {
+        \begin{itemize}
+            \item There are $2^n$ potential Hall sets, so considering them all is probably a bad
+                idea. However, there is a polynomial algorithm.
+
+            \item This algorithm isn't examinable, but here's an animation of roughly how it works,
+                so you don't have to believe it's magic any more.
+        \end{itemize}
+    }
+
+    \only <2-> {
+        \centering
+        \begin{tikzpicture}[scale=0.75]
+            \path (-1, -0.6) rectangle (7, 8.6);
+            \node <3-> [inner sep = 1pt] (X1) at (0, 8) { $\mathit{row}[0]$ };
+            \node <3-> [inner sep = 1pt] (X2) at (0, 7) { $\mathit{row}[1]$ };
+            \node <3-> [inner sep = 1pt] (X3) at (0, 6) { $\mathit{row}[2]$ };
+            \node <3-> [inner sep = 1pt] (X4) at (0, 5) { $\mathit{row}[3]$ };
+            \node <3-> [inner sep = 1pt] (X5) at (0, 4) { $\mathit{row}[4]$ };
+            \node <3-> [inner sep = 1pt] (X6) at (0, 3) { $\mathit{row}[5]$ };
+            \node <3-> [inner sep = 1pt] (X7) at (0, 2) { $\mathit{row}[6]$ };
+            \node <3-> [inner sep = 1pt] (X8) at (0, 1) { $\mathit{row}[7]$ };
+            \node <3-> [inner sep = 1pt] (X9) at (0, 0) { $\mathit{row}[8]$ };
+
+            \node <4-> [inner sep = 1pt] (V1) at (6, 8) { $1\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V2) at (6, 7) { $2\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V3) at (6, 6) { $3\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V4) at (6, 5) { $4\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V5) at (6, 4) { $5\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V6) at (6, 3) { $6\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V7) at (6, 2) { $7\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V8) at (6, 1) { $8\vphantom{[]}$ };
+            \node <4-> [inner sep = 1pt] (V9) at (6, 0) { $9\vphantom{[]}$ };
+
+            \draw <5> [thick, color=uofgsandstone!50] (X1.east) to [out=0, in=180] (V1.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X1.east) to [out=0, in=180] (V8.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X2.east) to [out=0, in=180] (V2.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X2.east) to [out=0, in=180] (V3.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X3.east) to [out=0, in=180] (V2.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X3.east) to [out=0, in=180] (V3.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X4.east) to [out=0, in=180] (V2.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X4.east) to [out=0, in=180] (V4.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X4.east) to [out=0, in=180] (V5.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X5.east) to [out=0, in=180] (V4.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X5.east) to [out=0, in=180] (V5.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X5.east) to [out=0, in=180] (V6.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X6.east) to [out=0, in=180] (V4.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X6.east) to [out=0, in=180] (V5.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X6.east) to [out=0, in=180] (V6.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X7.east) to [out=0, in=180] (V2.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X7.east) to [out=0, in=180] (V7.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X7.east) to [out=0, in=180] (V9.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X8.east) to [out=0, in=180] (V3.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X8.east) to [out=0, in=180] (V7.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X8.east) to [out=0, in=180] (V8.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V2.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V3.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V5.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V8.west);
+            \draw <5> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V9.west);
+
+            \draw <6> [thick, color=uofgsandstone!50] (X1.east) to [out=0, in=180] (V8.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X2.east) to [out=0, in=180] (V2.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X3.east) to [out=0, in=180] (V3.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X4.east) to [out=0, in=180] (V2.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X4.east) to [out=0, in=180] (V5.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X5.east) to [out=0, in=180] (V4.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X5.east) to [out=0, in=180] (V5.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X6.east) to [out=0, in=180] (V4.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X6.east) to [out=0, in=180] (V6.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X7.east) to [out=0, in=180] (V2.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X7.east) to [out=0, in=180] (V9.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X8.east) to [out=0, in=180] (V3.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X8.east) to [out=0, in=180] (V7.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V2.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V3.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V5.west);
+            \draw <6> [thick, color=uofgsandstone!50] (X9.east) to [out=0, in=180] (V8.west);
+            \draw <6> [thick] (X9.east) to [out=0, in=180] (V9.west);
+            \draw <6> [thick] (X1.east) to [out=0, in=180] (V1.west);
+            \draw <6> [thick] (X2.east) to [out=0, in=180] (V3.west);
+            \draw <6> [thick] (X3.east) to [out=0, in=180] (V2.west);
+            \draw <6> [thick] (X4.east) to [out=0, in=180] (V4.west);
+            \draw <6> [thick] (X5.east) to [out=0, in=180] (V6.west);
+            \draw <6> [thick] (X6.east) to [out=0, in=180] (V5.west);
+            \draw <6> [thick] (X7.east) to [out=0, in=180] (V7.west);
+            \draw <6> [thick] (X8.east) to [out=0, in=180] (V8.west);
+
+            \draw <7-8> [thick, ->] ($(X1.east)!0.25!(X1.north east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.north west)$);
+            \draw <7-8> [thick, ->] ($(X2.east)!0.25!(X2.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <7-8> [thick, ->] ($(X3.east)!0.25!(X3.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <7-8> [thick, ->] ($(X4.east)!0.25!(X4.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <7-8> [thick, ->] ($(X4.east)!0.25!(X4.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <7-8> [thick, ->] ($(X5.east)!0.25!(X5.north east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.north west)$);
+            \draw <7-8> [thick, ->] ($(X5.east)!0.25!(X5.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <7-8> [thick, ->] ($(X6.east)!0.25!(X6.north east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.north west)$);
+            \draw <7-8> [thick, ->] ($(X6.east)!0.25!(X6.north east)$) to [out=0, in=180] ($(V6.west)!0.25!(V6.north west)$);
+            \draw <7-8> [thick, ->] ($(X7.east)!0.25!(X7.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <7-8> [thick, ->] ($(X7.east)!0.25!(X7.north east)$) to [out=0, in=180] ($(V9.west)!0.25!(V9.north west)$);
+            \draw <7-8> [thick, ->] ($(X8.east)!0.25!(X8.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <7-8> [thick, ->] ($(X8.east)!0.25!(X8.north east)$) to [out=0, in=180] ($(V7.west)!0.25!(V7.north west)$);
+            \draw <7-8> [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <7-8> [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <7-8> [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <7-8> [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.north west)$);
+            \draw <7-8> [thick, <-] ($(X9.east)!0.25!(X9.south east)$) to [out=0, in=180] ($(V9.west)!0.25!(V9.south west)$);
+            \draw <7-8> [thick, <-] ($(X1.east)!0.25!(X1.south east)$) to [out=0, in=180] ($(V1.west)!0.25!(V1.south west)$);
+            \draw <7-8> [thick, <-] ($(X2.east)!0.25!(X2.south east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.south west)$);
+            \draw <7-8> [thick, <-] ($(X3.east)!0.25!(X3.south east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.south west)$);
+            \draw <7-8> [thick, <-] ($(X4.east)!0.25!(X4.south east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.south west)$);
+            \draw <7-8> [thick, <-] ($(X5.east)!0.25!(X5.south east)$) to [out=0, in=180] ($(V6.west)!0.25!(V6.south west)$);
+            \draw <7-8> [thick, <-] ($(X6.east)!0.25!(X6.south east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.south west)$);
+            \draw <7-8> [thick, <-] ($(X7.east)!0.25!(X7.south east)$) to [out=0, in=180] ($(V7.west)!0.25!(V7.south west)$);
+            \draw <7-8> [thick, <-] ($(X8.east)!0.25!(X8.south east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.south west)$);
+
+            \draw <9> [thick, ->, color=uofglawn!80!black] ($(X2.east)!0.25!(X2.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <9> [thick, ->, color=uofglawn!80!black] ($(X3.east)!0.25!(X3.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <9> [thick, <-, color=uofglawn!80!black] ($(X2.east)!0.25!(X2.south east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.south west)$);
+            \draw <9> [thick, <-, color=uofglawn!80!black] ($(X3.east)!0.25!(X3.south east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.south west)$);
+            \draw <9> [thick, ->, color=uofgturquoise!80!black] ($(X4.east)!0.25!(X4.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <9> [thick, ->, color=uofgturquoise!80!black] ($(X5.east)!0.25!(X5.north east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.north west)$);
+            \draw <9> [thick, ->, color=uofgturquoise!80!black] ($(X5.east)!0.25!(X5.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <9> [thick, ->, color=uofgturquoise!80!black] ($(X6.east)!0.25!(X6.north east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.north west)$);
+            \draw <9> [thick, ->, color=uofgturquoise!80!black] ($(X6.east)!0.25!(X6.north east)$) to [out=0, in=180] ($(V6.west)!0.25!(V6.north west)$);
+            \draw <9> [thick, <-, color=uofgturquoise!80!black] ($(X4.east)!0.25!(X4.south east)$) to [out=0, in=180] ($(V4.west)!0.25!(V4.south west)$);
+            \draw <9> [thick, <-, color=uofgturquoise!80!black] ($(X5.east)!0.25!(X5.south east)$) to [out=0, in=180] ($(V6.west)!0.25!(V6.south west)$);
+            \draw <9> [thick, <-, color=uofgturquoise!80!black] ($(X6.east)!0.25!(X6.south east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.south west)$);
+            \draw <9> [thick, ->, color=uofgpumpkin!80!black] ($(X7.east)!0.25!(X7.north east)$) to [out=0, in=180] ($(V9.west)!0.25!(V9.north west)$);
+            \draw <9> [thick, ->, color=uofgpumpkin!80!black] ($(X8.east)!0.25!(X8.north east)$) to [out=0, in=180] ($(V7.west)!0.25!(V7.north west)$);
+            \draw <9> [thick, ->, color=uofgpumpkin!80!black] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.north west)$);
+            \draw <9> [thick, <-, color=uofgpumpkin!80!black] ($(X9.east)!0.25!(X9.south east)$) to [out=0, in=180] ($(V9.west)!0.25!(V9.south west)$);
+            \draw <9> [thick, <-, color=uofgpumpkin!80!black] ($(X7.east)!0.25!(X7.south east)$) to [out=0, in=180] ($(V7.west)!0.25!(V7.south west)$);
+            \draw <9> [thick, <-, color=uofgpumpkin!80!black] ($(X8.east)!0.25!(X8.south east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.south west)$);
+            \draw <11-> [thick, <-, color=uofgcobalt] ($(X1.east)!0.25!(X1.south east)$) to [out=0, in=180] ($(V1.west)!0.25!(V1.south west)$);
+            \draw <9-10>  [thick, <-] ($(X1.east)!0.25!(X1.south east)$) to [out=0, in=180] ($(V1.west)!0.25!(V1.south west)$);
+            \draw <9-10>  [thick, ->] ($(X4.east)!0.25!(X4.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <9-10>  [thick, ->] ($(X7.east)!0.25!(X7.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <9-10>  [thick, ->] ($(X8.east)!0.25!(X8.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <9-10>  [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <9-10>  [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <9-10>  [thick, ->] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <9-10>  [thick, ->] ($(X1.east)!0.25!(X1.north east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X4.east)!0.25!(X4.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X7.east)!0.25!(X7.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X8.east)!0.25!(X8.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V2.west)!0.25!(V2.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V3.west)!0.25!(V3.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X9.east)!0.25!(X9.north east)$) to [out=0, in=180] ($(V5.west)!0.25!(V5.north west)$);
+            \draw <11->  [thick, ->, color=uofgpillarbox] ($(X1.east)!0.25!(X1.north east)$) to [out=0, in=180] ($(V8.west)!0.25!(V8.north west)$);
+
+            \begin{pgfonlayer}{background}
+                \node <8-9> [rounded corners, fit = (X1), fill=uofgthistle] {};
+                \node <8-9> [rounded corners, fit = (V1), fill=uofglavendar] {};
+                \node <8-9> [rounded corners, fit = (X2) (X3) (V2) (V3), fill=uofglawn] {};
+                \node <8-9> [rounded corners, fit = (X4) (X5) (X6) (V4) (V5) (V6), fill=uofgcobalt] {};
+                \node <8-9> [rounded corners, fit = (X7) (X8) (X9) (V7) (V8) (V9), fill=uofgpumpkin] {};
+            \end{pgfonlayer}
+        \end{tikzpicture}
+    }
+\end{frame}
+
 \begin{frame}[fragile]{A Sudoku Solver in Choco}
-    \only<1>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-1-snippet.java}}
-    \only<2>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-2-snippet.java}}
-    \only<3>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-3-snippet.java}}
-    \only<4>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-4-snippet.java}}
-    \only<5>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-5-snippet.java}}
-    \only<6>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-6-snippet.java}}
-    \only<7>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-7-snippet.java}}
+    \only<1>{\lstinputlisting[basicstyle=\scriptsize\ttfamily]{herald20061222E.txt}}
+    \only<2>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-1-snippet.java}}
+    \only<3>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-2-snippet.java}}
+    \only<4>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-3-snippet.java}}
+    \only<5>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-4-snippet.java}}
+    \only<6-7>{
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-5-snippet.java}
+        \begin{tikzpicture}[remember picture, overlay]
+            \node [anchor=north east, xshift=-0.5cm, yshift=-1cm] at (current page.north east) {
+                \only<7>{\includegraphics*[keepaspectratio=true,scale=0.45]{eww.jpg}}
+            };
+        \end{tikzpicture}
+    }
+    \only<8>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-6-snippet.java}}
+    \only<9>{\lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{Sudoku-7-snippet.java}}
 \end{frame}
 
 \begin{frame}[fragile]{Incidentally, 2D arrays in Gecode are Much Nicer}
@@ -693,6 +642,7 @@
     }
 
     \only<10> {
+        \centering
         \includegraphics*[keepaspectratio=true,scale=0.24]{hardest.png}
     }
     \only<11-12> {
