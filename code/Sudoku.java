@@ -28,7 +28,7 @@ public class Sudoku
 
     public static void main(String args[]) throws ContradictionException, FileNotFoundException
     {
-        int n = 3;
+        int n = args.length > 2 ? Integer.parseInt(args[2]) : 3;
         int nn = n * n;
         int[][] predef = new int[nn][nn];
 

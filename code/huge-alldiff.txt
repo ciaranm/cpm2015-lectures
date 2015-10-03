@@ -1,0 +1,4 @@
+Solutions: 1
+Initial propagation : 0.305s
+Resolution : 0.921s
+Nodes: 351 (381.1 n/s) 
