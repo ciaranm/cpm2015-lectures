@@ -1,3 +1,5 @@
+Using all-different:
+
 Solutions: 1
 Initial propagation : 0.305s
 Resolution : 0.921s

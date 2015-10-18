@@ -299,6 +299,9 @@
 
 \begin{frame}{Sudoku}
 
+    \centering
+    \includegraphics*[keepaspectratio=true,scale=0.18]{sudoku.png}
+
 \end{frame}
 
 \begin{frame}{How do Humans Solve Sudoku?}
@@ -692,16 +695,24 @@
     }
 
     \only<13> {
-        \scalebox{0.7}{\lstinputlisting[basicstyle=\fontsize{5pt}{6pt}\ttfamily]{code/huge.txt}}
+        \scalebox{0.7}{
+            \begin{minipage}{2\paperwidth}
+                \lstinputlisting[basicstyle=\fontsize{5pt}{6pt}\ttfamily]{code/huge.txt}
+        \end{minipage}}
     }
 
-    \only<14> {
-        \begin{columns}
+    \only<14-15> {
+        \begin{columns}[t]
             \begin{column}{0.45\textwidth}
                 \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/huge-neq.txt}
             \end{column}
             \begin{column}{0.45\textwidth}
-                \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/huge-alldiff.txt}
+                \only<14> {
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily\color{white}]{code/huge-alldiff.txt}
+                }
+                \only<15> {
+                    \lstinputlisting[basicstyle=\scriptsize\ttfamily]{code/huge-alldiff.txt}
+                }
             \end{column}
         \end{columns}
     }
@@ -712,16 +723,24 @@
         \item Sometimes globals make a spectacular difference.
 
         \item Sometimes global constraints end up not giving any more deletions than their
-            decompositions, and can take longer to propagate.
+            decompositions, and can take longer to propagate. Sometimes extra deletions don't help
+            anyway.
 
-        \item Sometimes extra deletions don't reduce the search space size.
+        \item Some global constraints cannot be \emph{decomposed}. Any global constraint can be
+            \emph{encoded} using binary constraints in a very unpleasant way involving polynomially
+            many extra variables, but AC on an encoding can be weaker than GAC.
 
-        \item Some global constraints can only be decomposed down to binary constraints in a very
-            unpleasant way involving lot of extra variables.
+            \begin{itemize}
+                \item Difficult homework: $a + b = c$ using binary constraints.
+            \end{itemize}
 
         \item Using globals isn't a \emph{guaranteed} benefit, but they make the model easier to
-            read, and it's easier to translate from globals to decompositions than the other way
-            around.
+            read, and it's easier to translate from globals to decompositions and encodings than the
+            other way around.
+
+            \begin{itemize}
+                \item Really easy homework: detecting all-different is \NP-hard.
+            \end{itemize}
     \end{itemize}
 \end{frame}
 
