@@ -162,17 +162,35 @@
 \end{frame}
 
 \begin{frame}{Maintaining Arc Consistency (MAC)}
-    \begin{itemize}
-        \item Achieve (generalised) arc consistency (AC3, etc).
-        \item If we have a domain wipeout, backtrack.
-        \item If all domains have one value, we're done.
-        \item Pick a variable (using a heuristic) with more than one value, then branch:
-            \begin{itemize}
-                \item Try giving it one of its possible values (using a heuristic), and recurse.
-                \item If that failed, reject that value, pick a new value, and try again.
-                \item If we run out of values, backtrack.
-            \end{itemize}
-    \end{itemize}
+    \only<1> {
+        \begin{itemize}
+            \item Achieve (generalised) arc consistency (AC3, etc).
+            \item If we have a domain wipeout, backtrack.
+            \item If all domains have one value, we're done.
+            \item Pick a variable (using a heuristic) with more than one value, then branch:
+                \begin{itemize}
+                    \item Try giving it one of its possible values (using a heuristic), and recurse.
+                    \item If that failed, reject that value, pick a new value, and try again.
+                    \item If we run out of values, backtrack.
+                \end{itemize}
+        \end{itemize}
+    }
+
+    \only<2> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/MAC-snippet-1.java}
+    }
+
+    \only<3> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/MAC-snippet-2.java}
+    }
+
+    \only<4> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/MAC-snippet-3.java}
+    }
+
+    \only<5> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/MAC-snippet-4.java}
+    }
 \end{frame}
 
 \begin{frame}{Search as a Tree}
@@ -333,6 +351,9 @@
 
         \item But this means that giving the 10th value to a variable counts as 9 discrepancies. Is
             this good or bad?
+
+        \item Alternatively, we can treat the left branch as no discrepancy, and all right branches
+            as discrepancies.
     \end{itemize}
 \end{frame}
 
@@ -392,6 +413,12 @@
 
         \item There are search variants which are better for unsatisfiable instances, and for
             optimisation problems.
+
+            \begin{itemize}
+                \item One useful observation: if no leaf nodes are found when exploring for $k$
+                    discrepancies, then no leaf nodes will be found when exploring for $k + 1$
+                    discrepancies, so we can stop immediately.
+            \end{itemize}
     \end{itemize}
 
 \end{frame}
@@ -402,12 +429,22 @@
     \end{center}
 \end{frame}
 
-\begin{frame}{Discrepancy Searches in Choco}
-
-\end{frame}
-
-\begin{frame}{Some Experiments}
-
+\begin{frame}{A Rough Hack at DDS in Choco}
+    \only<1> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/DDS-snippet-1.java}
+    }
+    \only<2> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/DDS-snippet-2.java}
+    }
+    \only<3> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/DDS-snippet-3.java}
+    }
+    \only<4> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/DDS-snippet-4.java}
+    }
+    \only<5> {
+        \lstinputlisting[language=Java, basicstyle=\scriptsize\ttfamily, keywordstyle=\color{uofgcobalt}]{code/DDS-snippet-5.java}
+    }
 \end{frame}
 
 \begin{frame}{This is Not The Exam Question}
@@ -416,6 +453,9 @@
     discrepancy search? \\[0.5cm]
 
     Why are discrepancy searches a bad choice if instances are expected to be unsatisfiable?
+    \\[0.5cm]
+
+    When using MAC, what effect do value ordering heuristics have on unsatisfiable instances?
 
 \end{frame}
 
