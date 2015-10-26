@@ -4,7 +4,7 @@ all : tables graphs
 
 TABLES =
 
-GRAPHS =
+GRAPHS = gen-graph-colour-simple.tex gen-graph-colour-bigger.tex gen-graph-colour-bigger59.tex
 
 tables : $(TABLES)
 
