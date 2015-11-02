@@ -125,6 +125,44 @@
     \end{beamercolorbox}
 }
 
+\makeatletter
+\newenvironment{nearlyplainframe}[2][]{
+    \def\beamer@entrycode{\vspace*{-\headheight}}
+    \setbeamertemplate{headline}
+    {%
+        \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[ht=0.5ex,dp=0.125ex,%
+            leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[ht=0.5ex,dp=0.125ex,%
+            leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+        \end{beamercolorbox}
+        \vspace*{\headheight}
+    }
+
+    \setbeamertemplate{footline}
+    {%
+        \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+        \end{beamercolorbox}
+        \begin{beamercolorbox}[ht=0.5ex,dp=0.125ex,%
+            leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[ht=0.5ex,dp=0.125ex,%
+            leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+        \end{beamercolorbox}%
+        \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+        \end{beamercolorbox}
+    }
+
+    \begin{frame}[#1]{#2}
+    }{
+    \end{frame}
+}
+\makeatother
+
 % }}}
 
 \title{Parallel Search}
@@ -244,16 +282,105 @@
         \begin{itemize}
             \item If we create $n$ subproblems, chances are we'll get poor balance.
             \item We can't tell beforehand where the really hard subproblems will be.
-            \item What if we create \emph{lots} of subproblems?
+            \item What if we create \emph{lots} of subproblems, and distribute them dynamically?
         \end{itemize}
+    }
+
+    \only<2>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-paper.png}
+            \vspace{1em}
+            \centering\includegraphics*[keepaspectratio=true,scale=0.18]{eps-abstract.png}
+        \end{center}
+    }
+
+    \only<3>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-split-k.png}
+        \end{center}
+    }
+
+    \only<4>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-split-30k.png}
+        \end{center}
+    }
+
+    \only<5>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-generation.png}
+        \end{center}
+    }
+
+    \only<6>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-assumption.png}
+        \end{center}
+    }
+
+    \only<7>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-optimisation.png}
+        \end{center}
+    }
+
+    \only<8>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-results.png}
+        \end{center}
+    }
+
+    \only<9>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{eps-why30.png}
+        \end{center}
     }
 \end{frame}
 
-\begin{frame}{Work Stealing}
-    \begin{itemize}
-        \item What if we split work entirely dynamically?
-        \item Whenever a worker is idle, have it steal a subproblem from another worker.
-    \end{itemize}
+\begin{frame}{Randomised Work Stealing}
+    \only<1> {
+        \begin{itemize}
+            \item What if we split work entirely dynamically?
+            \item Whenever a worker is idle, have it steal a subproblem from another randomly
+                selected worker.
+        \end{itemize}
+    }
+
+    \only<2>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-parallel.png}
+        \end{center}
+    }
+
+    \only<3>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-facts1.png}
+        \end{center}
+    }
+
+    \only<4>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-facts2.png}
+        \end{center}
+    }
+
+    \only<5>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-optimistic.png}
+        \end{center}
+    }
+
+    \only<6>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-result1.png}
+        \end{center}
+    }
+
+    \only<7>{
+        \begin{center}
+            \includegraphics*[keepaspectratio=true,scale=0.18]{gecode-result2.png}
+        \end{center}
+    }
 \end{frame}
 
 \begin{frame}{Speedups from Parallel Tree Search}
@@ -355,7 +482,7 @@
                 \emph{better} work balance gave \emph{worse} performance, because it took longer to
                 find a solution.
 
-            \item Remember Harvey and Ginsberg, from Monday?
+            \item Remember Harvey and Ginsberg's Limited Discrepancy Search?
 
                 \begin{enumerate}\stepcounter{enumi}
                     \item Value-ordering heuristics are most likely to wrong higher up in the tree (there is
@@ -369,11 +496,103 @@
 
 \end{frame}
 
-\begin{frame}{Confidence Based Work Stealing}
+\begin{frame}{Confidence-Based Work Stealing}
+
+    \only<1>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{cows-paper.png}
+
+        \vspace{0em}
+    }
+
+    \only<2>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{cows-abstract.png}
+
+        \vspace{0em}
+    }
+
+    \only<3>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{cows-early.png}
+
+        \vspace{0em}
+    }
+
+    \only<4>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{cows-lds.png}
+
+        \vspace{0em}
+    }
+
+    \only<5>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{cows-conclusion.png}
+
+        \vspace{0em}
+    }
+
+\end{frame}
+
+\begin{frame}{Using Confidence-Based Work Stealing}
+    \only<1>{
+        \begin{itemize}
+            \item I would like to be able to tell you that all you need to do to get excellent
+                speedups from parallelism, and all of the benefits of discrepancy searches with none
+                of the costs, is to annotate your model and your heuristics a little bit and then
+                use Confidence-Based Work Stealing.
+
+            \item But the implementations aren't quite at that stage yet.
+        \end{itemize}
+    }
+
+    \only<2>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{implementing.png}
+
+        \vspace{0em}
+    }
+
+    \only<3>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{implementing-404.png}
+
+        \vspace{0em}
+    }
+
+    \only<4>{
+        \centering\includegraphics*[keepaspectratio=true,scale=0.35]{sad-kitten.jpg}
+
+        \vspace{0em}
+    }
+\end{frame}
+
+\begin{frame}{Early Diversity Work Stealing}
+
+    \only<1>{
+        \begin{itemize}
+            \item Confidence seems hard. What if we just steal as early as possible, and subject to
+                that, as far left as possible?
+
+            \item We'll get reproducible runtimes, can guarantee we'll never get a substantial
+                slowdown, and adding more processors will never make things worse.
+
+            \item Added bonus: we can parallelise conflict-directed backjumping this way too
+                (although we no longer expect a linear speedup for unsatisfiable instances).
+        \end{itemize}
+    }
+
+    \only<2> {
+        \centering\includegraphics*[keepaspectratio=true,scale=0.40]{sip.png}
+    }
+
+    \only<3>{
+        \vspace*{-0.5cm}\input{gen-graph-speedups-scatter}
+    }
 
 \end{frame}
 
 \begin{frame}{This is Not The Exam Question}
+    What is \emph{balance}, and why is it a problem if we try to parallelise a tree-search by
+    creating $n$ sub-trees for $n$ processors? Suggest two potential remedies. \\[0.5cm]
+
+    Why does Amdahl's law not apply to parallel tree-search? Why are \emph{super-linear} speedups
+    possible? \\[0.5cm]
+
     Suppose we are solving a decision problem which has a sequential part taking
     one second to run, and a parallelisable part which takes twenty seconds to run on one
     processor. What is the best possible runtime we might see when using ten processors to
