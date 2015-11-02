@@ -61,7 +61,7 @@
 \setbeamerfont{section title}{size=\large,series=\mdseries}
 \setbeamerfont{author}{size=\normalsize,series=\mdseries}
 \setbeamercolor*{structure}{fg=uofguniversityblue}
-\setbeamercolor*{palette primary}{use=structure,fg=black,bg=white}
+\setbeamercolor*{palette primary}{use=structure,fg=black,bg=}
 \setbeamercolor*{palette secondary}{use=structure,fg=white,bg=uofgcobalt}
 \setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=uofguniversityblue}
 \setbeamercolor*{palette quaternary}{fg=white,bg=black}
@@ -579,12 +579,20 @@
     \only<2> {
         \centering\includegraphics*[keepaspectratio=true,scale=0.40]{sip.png}
     }
+\end{frame}
 
-    \only<3>{
-        \vspace*{-0.5cm}\input{gen-graph-speedups-scatter}
+\begin{nearlyplainframe}[b]{Early Diversity Work Stealing}
+
+    \only<1>{
+        \input{gen-graph-speedups-scatter}
     }
 
-\end{frame}
+    \only<2>{
+        \vspace*{1cm}
+        \input{gen-graph-speedups-cumulative.tex}
+    }
+
+\end{nearlyplainframe}
 
 \begin{frame}{This is Not The Exam Question}
     What is \emph{balance}, and why is it a problem if we try to parallelise a tree-search by

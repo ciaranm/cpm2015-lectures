@@ -1,12 +1,12 @@
 # vim: set et ft=gnuplot sw=4 :
 
-set terminal tikz color size 4.2in,3in font '\tiny'
+set terminal tikz color size 4.2in,3.5in font '\tiny'
 
 set size square
 
 set output "gen-graph-speedups-scatter.tex"
 
-set key outside right center height 1 width -2 spacing 1.2
+set key outside right center
 
 set border 3
 
